@@ -38,6 +38,7 @@ The error handling process in the `divide` function is as follows:
 
 4. If none of the above conditions are met, the function successfully completes and returns the division result.
 
+
    // SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.7;
@@ -57,6 +58,7 @@ contract Module1 {
 }
 
 }
+
 
 #### More on `require`, `assert`, `revert`
 
