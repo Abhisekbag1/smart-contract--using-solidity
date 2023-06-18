@@ -10,7 +10,7 @@ This Solidity smart contract demonstrates error handling techniques using the `r
 
 Getting Started
 
-Executing program
+Executing Program
 
 The project will involve the following steps:
 
@@ -53,13 +53,16 @@ contract SmartContract {
 
 
 
-purposes:
+Purpose
 
-It's important to note that require(), assert(), and revert() are used for different 
-.require() is typically used to validate input conditions or contract preconditions. It throws an error and reverts the transaction if the condition is not met.
-.assert() is used to check for internal errors in the contract. It should only be used for conditions that should never be false. If the condition is false, it indicates a 
+ It's important to note that require(), assert(), and revert() are used for different 
+ 
+1.require() is typically used to validate input conditions or contract preconditions. It throws an error and reverts the transaction if the condition is not met.
+
+2assert() is used to check for internal errors in the contract. It should only be used for conditions that should never be false. If the condition is false, it indicates a 
  bug in the contract.
-.revert() is used to explicitly revert the transaction, usually due to a requirement violation or an exceptional condition.
+ 
+3.revert() is used to explicitly revert the transaction, usually due to a requirement violation or an exceptional condition.
  These error handling mechanisms help ensure the contract's integrity and provide meaningful feedback to users interacting with the contract.
 
 3.Compiling the Contract:
@@ -69,15 +72,18 @@ It's important to note that require(), assert(), and revert() are used for diffe
 
 4.Deploying the Contract:
 
-.Switch to the "Deploy & run transactions" tab in Remix.
-.Deploy the compiled contract by clicking the "Deploy" button.
+1.Switch to the "Deploy & run transactions" tab in Remix.
+
+2.Deploy the compiled contract by clicking the "Deploy" button.
 
 5.Interacting with the smart contract:
 
-.Utilize the Remix IDE to interact with the deployed contract create.
-.In the above smart contract, there are two functions: setValue() and setValueWithRevert(). Both functions take an input _value and set the value variable of the contract 
+1.Utilize the Remix IDE to interact with the deployed contract create.
+
+2.In the above smart contract, there are two functions: setValue() and setValueWithRevert(). Both functions take an input _value and set the value variable of the contract 
  to that input value. However, they use different error handling mechanisms.
-.Input the adress and value and click on the corresponding function buttons to execute our contract.
+ 
+3Input the adress and value and click on the corresponding function buttons to execute our contract.
 
 ## Author
 
