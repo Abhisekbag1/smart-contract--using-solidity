@@ -1,19 +1,26 @@
 // SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
 
-pragma solidity ^0.8.7;
-
-contract Module1 {
-
-    function divide(uint256 a, uint256 b) public pure returns (uint256) {
+contract SmartContract {
+    uint public value;
+    
+    function setValue(uint _value) public {
+        // require statement
+        require(_value > 0, "Value must be greater than zero");
         
-    require(b != 0, "Divisor cannot be zero");
-
-    uint256 result = a / b;
-    assert(result >= 10);
-    if (result > 100) {
-        revert("Result exceeds limit");
+        // assert statement
+        assert(_value != 42);
+        
+        // set the value
+        value = _value;
     }
-    return result;
-}
-
+    
+    function setValueWithRevert(uint _value) public {
+        if (_value == 0) {
+            // revert statement
+            revert("Value cannot be zero");
+        }
+        
+        value = _value;
+    }
 }
