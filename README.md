@@ -8,79 +8,77 @@ In Solidity, you can define smart contracts by writing code that specifies the c
 In Solidity, you can define smart contracts by writing code that specifies the contract's functionality, rules, and interactions with other contracts and users.
 This Solidity smart contract demonstrates error handling techniques using the `require`, `assert`, and `revert` statements. Let's explore how error handling is implemented in the code!
 
-## Prerequisites
+Getting Started
 
-Make sure you have the following software installed on your machine:
+Executing program
 
-- Solidity compiler version 0.8.7 or compatible
-- Ethereum development environment (e.g., Remix, Truffle, Hardhat, etc.)
+The project will involve the following steps:
 
-## Installation
+Setting up Remix:
 
-1. Clone the repository or download the code from the provided source.
-2. Open the Solidity code file named `Module.sol` in your preferred development environment.
+1.Open the Remix IDE in your web browser.
+To run this program, you can use Remix, an online Solidity IDE. To get started, go to the Remix website at https://remix.ethereum.org/.
 
-## Error Handling
+2.Creating the smart contract:
+Start a new file in the code editor within Remix. Copy and paste the following code into the file:
 
-The `Module1` contract showcases error handling mechanisms through the use of `require`, `assert`, and `revert` statements in the `divide` function.
+''' // SPDX-License-Identifier: MIT pragma solidity 0.8.18;
 
-### `divide(uint256 a, uint256 b)`
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
 
-This function takes two unsigned integer parameters, `a` and `b`, and returns the result of the division operation as an unsigned integer.
-
-The error handling process in the `divide` function is as follows:
-
-1. The `require` statement is used to check if the divisor (`b`) is not zero. If `b` is zero, the execution is immediately halted, and an exception with the error message "Divisor cannot be zero" is thrown. This ensures that the division operation is performed only when the divisor is non-zero, preventing a potential division-by-zero error.
-
-2. After the division operation, the `assert` statement verifies that the result is greater than or equal to 10. If the result is less than 10, the execution is halted, and an exception is thrown. This assertion ensures that the division result meets a specific condition and catches any unexpected behavior that might violate the contract's logic.
-
-3. Additionally, an `if` statement is used to check if the result exceeds 100. If this condition is met, the `revert` statement is triggered, causing the transaction to be reverted with the error message "Result exceeds limit". This ensures that the division result is within an acceptable range and prevents undesirable outcomes.
-
-4. If none of the above conditions are met, the function successfully completes and returns the division result.
-
-
-   // SPDX-License-Identifier: MIT
-
-pragma solidity ^0.8.7;
-
-contract Module1 {
-
-    function divide(uint256 a, uint256 b) public pure returns (uint256) {
+contract SmartContract {
+    uint public value;
+    
+    function setValue(uint _value) public {
+        // require statement
+        require(_value > 0, "Value must be greater than zero");
         
-    require(b != 0, "Divisor cannot be zero");
-
-    uint256 result = a / b;
-    assert(result >= 10);
-    if (result > 100) {
-        revert("Result exceeds limit");
+        // assert statement
+        assert(_value != 42);
+        
+        // set the value
+        value = _value;
     }
-    return result;
+    
+    function setValueWithRevert(uint _value) public {
+        if (_value == 0) {
+            // revert statement
+            revert("Value cannot be zero");
+        }
+        
+        value = _value;
+    }
 }
 
-}
 
 
-#### More on `require`, `assert`, `revert`
+purposes:
 
-`require`: The `require` statement is used to validate certain conditions before proceeding with the execution of a function. It takes a condition as the first argument and an optional error message as the second argument. If the condition evaluates to false, the execution of the function is immediately halted, and any changes made to the state are reverted. An error message can be provided to indicate the reason for the failure. The `require` statement is typically used for input validation and to ensure certain conditions are met before executing further code.
+It's important to note that require(), assert(), and revert() are used for different 
+.require() is typically used to validate input conditions or contract preconditions. It throws an error and reverts the transaction if the condition is not met.
+.assert() is used to check for internal errors in the contract. It should only be used for conditions that should never be false. If the condition is false, it indicates a 
+ bug in the contract.
+.revert() is used to explicitly revert the transaction, usually due to a requirement violation or an exceptional condition.
+ These error handling mechanisms help ensure the contract's integrity and provide meaningful feedback to users interacting with the contract.
 
-`assert`: The `assert` statement is used to check for conditions that should never evaluate to false. It is typically used to validate internal consistency or invariants of the contract. If the condition provided to `assert` evaluates to false, it signifies a critical error in the code, and the execution is halted. Unlike `require`, `assert` does not allow for recovery or error messages. The purpose of `assert` is to catch logical errors during development and testing.
+3.Compiling the Contract:
 
-`revert`: The `revert` statement is used to flag an error and revert the current transaction. It is often used when an unexpected or invalid state is encountered, and there is no safe way to proceed with the execution. The `revert` statement can optionally include an error message to provide more information about the error. When `revert` is triggered, all changes made to the state within the transaction are undone, and any Ether sent along with the transaction is returned. It is essential for preventing erroneous states and preserving the integrity of the contract.
+.Use the Remix compiler panel to compile your smart contract.
+.Select the appropriate compiler version pragma solidity ^0.8.0;
 
-In summary, `require` is used for input validation and conditional checks, `assert` is used for internal consistency and catching critical errors, and `revert` is used to flag and revert transactions when encountering unexpected or invalid states. Each statement serves a specific purpose in handling different types of errors and ensuring the integrity of the contract.
+4.Deploying the Contract:
 
-## Deployment
+.Switch to the "Deploy & run transactions" tab in Remix.
+.Deploy the compiled contract by clicking the "Deploy" button.
 
-To deploy the `Module1` contract on the Ethereum network, follow these steps:
+5.Interacting with the smart contract:
 
-1. Compile the Solidity code using the Solidity compiler.
+.Utilize the Remix IDE to interact with the deployed contract create.
+.In the above smart contract, there are two functions: setValue() and setValueWithRevert(). Both functions take an input _value and set the value variable of the contract 
+ to that input value. However, they use different error handling mechanisms.
+.Input the adress and value and click on the corresponding function buttons to execute our contract.
 
-2. Choose your preferred deployment method (Remix, Truffle, etc.) and provide the necessary configuration details (e.g., network, gas limit, etc.).
-
-3. Deploy the contract to the desired Ethereum network by following the deployment process specific to your chosen deployment method.
-
-4. Once the contract is deployed, you can interact with it using the provided functions, including the `divide` function that showcases error handling.
 ## Author
 
 Abhisek Bag
@@ -88,4 +86,4 @@ Abhisek Bag
 
 ## License
 
-This code is released under the [MIT License](https://opensource.org/licenses/MIT). Feel free to use, modify, and distribute it as per the terms of the license.
+his project is licensed under the MIT License - see the LICENSE.md file for details.This code is licensed under the MIT License. You can find the license text in the SPDX-License-Identifier comment at the beginning of the contract.
