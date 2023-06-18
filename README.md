@@ -8,15 +8,15 @@ In Solidity, you can define smart contracts by writing code that specifies the c
 In Solidity, you can define smart contracts by writing code that specifies the contract's functionality, rules, and interactions with other contracts and users.
 This Solidity smart contract demonstrates error handling techniques using the `require`, `assert`, and `revert` statements. Let's explore how error handling is implemented in the code!
 
-Getting Started
+# Getting Started
 
 
-Executing Program
+# Executing Program
 
 
-The project will involve the following steps:
+# The project will involve the following steps:
 
-Setting up Remix:
+# Setting up Remix:
 
 
 1.Open the Remix IDE in your web browser.
@@ -56,7 +56,7 @@ contract SmartContract {
 
 
 
-Purpose
+# Purpose
 
 
  It's important to note that require(), assert(), and revert() are used for different 
@@ -69,14 +69,14 @@ Purpose
 3.revert() is used to explicitly revert the transaction, usually due to a requirement violation or an exceptional condition.
  These error handling mechanisms help ensure the contract's integrity and provide meaningful feedback to users interacting with the contract.
 
-3.Compiling the Contract:
+#Compiling the Contract:
 
 
 .Use the Remix compiler panel to compile your smart contract.
 .Select the appropriate compiler version pragma solidity ^0.8.0;
 
 
-4.Deploying the Contract:
+# Deploying the Contract:
 
 
 1.Switch to the "Deploy & run transactions" tab in Remix.
@@ -84,7 +84,7 @@ Purpose
 2.Deploy the compiled contract by clicking the "Deploy" button.
 
 
-5.Interacting with the smart contract:
+# Interacting with the smart contract:
 
 1.Utilize the Remix IDE to interact with the deployed contract create.
 
