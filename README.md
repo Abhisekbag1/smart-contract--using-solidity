@@ -69,7 +69,7 @@ contract SmartContract {
 3.revert() is used to explicitly revert the transaction, usually due to a requirement violation or an exceptional condition.
  These error handling mechanisms help ensure the contract's integrity and provide meaningful feedback to users interacting with the contract.
 
-#Compiling the Contract:
+# Compiling the Contract:
 
 
 .Use the Remix compiler panel to compile your smart contract.
@@ -91,7 +91,7 @@ contract SmartContract {
 2.In the above smart contract, there are two functions: setValue() and setValueWithRevert(). Both functions take an input _value and set the value variable of the contract 
  to that input value. However, they use different error handling mechanisms.
  
-3Input the adress and value and click on the corresponding function buttons to execute our contract.
+3.Input the adress and value and click on the corresponding function buttons to execute our contract.
 
 
 ## Author
