@@ -10,11 +10,14 @@ This Solidity smart contract demonstrates error handling techniques using the `r
 
 Getting Started
 
+
 Executing Program
+
 
 The project will involve the following steps:
 
 Setting up Remix:
+
 
 1.Open the Remix IDE in your web browser.
 To run this program, you can use Remix, an online Solidity IDE. To get started, go to the Remix website at https://remix.ethereum.org/.
@@ -55,6 +58,7 @@ contract SmartContract {
 
 Purpose
 
+
  It's important to note that require(), assert(), and revert() are used for different 
  
 1.require() is typically used to validate input conditions or contract preconditions. It throws an error and reverts the transaction if the condition is not met.
@@ -67,14 +71,18 @@ Purpose
 
 3.Compiling the Contract:
 
+
 .Use the Remix compiler panel to compile your smart contract.
 .Select the appropriate compiler version pragma solidity ^0.8.0;
 
+
 4.Deploying the Contract:
+
 
 1.Switch to the "Deploy & run transactions" tab in Remix.
 
 2.Deploy the compiled contract by clicking the "Deploy" button.
+
 
 5.Interacting with the smart contract:
 
@@ -84,6 +92,7 @@ Purpose
  to that input value. However, they use different error handling mechanisms.
  
 3Input the adress and value and click on the corresponding function buttons to execute our contract.
+
 
 ## Author
 
